@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Form</title>
+</head>
+<body>
+	<form action="form_ok.php" method="post">
+		<input type="hidden" name="info" value="true">
+		<label for="name">Name:</label><br>
+		<input type="text" id="name" name="name">
+		<label for="age">Age:</label><br>
+		<input type="text" id="age" name="age">
+		<input type="submit" value="send">
+	</form>
+	
+	<h2>계산기</h2>
+	<form action="form_ok.php" method="get">
+		<input type="hidden" name="calc" value="true">
+		<input type="text" name="num1">
+		<label>X</label>
+		<input type="text" name="num2">
+		<input type="submit" value="calc">
+	</form>
+</body>
+</html>
