@@ -1,26 +1,88 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8">
 	<title>Form</title>
+	<style>
+		* {
+			margin: 10px 5px;
+			font-size: 1.125rem;
+		}
+	</style>
 </head>
 <body>
+	<h2>교내 체육시설 예약</h2>
 	<form action="form_ok.php" method="post">
-		<input type="hidden" name="info" value="true">
-		<label for="name">Name:</label><br>
-		<input type="text" id="name" name="name">
-		<label for="age">Age:</label><br>
-		<input type="text" id="age" name="age">
-		<input type="submit" value="send">
-	</form>
-	
-	<h2>계산기</h2>
-	<form action="form_ok.php" method="get">
-		<input type="hidden" name="calc" value="true">
-		<input type="text" name="num1">
-		<label>X</label>
-		<input type="text" name="num2">
-		<input type="submit" value="calc">
+		<!--select-->
+		<label for="facility">예약할 시설: </label><br>
+		<select name="facility" id="facility">
+			<option value="1">평봉필드</option>
+			<option value="2">히딩크드림필드</option>
+			<option value="3">테니스장</option>
+			<!--optgroup-->
+			<optgroup label="농구장">
+				<option value="4">농구장1</option>
+				<option value="5">농구장2</option>
+				<option value="6">농구장3</option>
+				<option value="7">농구장4</option>
+			</optgroup>
+			<option value="8">탁구장</option>
+		</select><br>
+		
+		
+		<!--date-->
+		<label for="date">날짜: </label><br>
+		<input type="date" name="date" id="date"><br>
+		
+		<!--time-->
+		<label for="start-time">시작 시간: </label><br>
+		<input type="time" name="start-time" id="start-time"><br>
+		<label for="end-time">종료 시간: </label><br>
+		<input type="time" name="end-time" id="end-time"><br>
+		
+		<!--text-->
+		<label for="name">대표자 이름: </label><br>
+		<input type="text" name="name" id="name"><br>
+		
+		<label for="phone">연락처: </label><br>
+		<input type="tel" name="phone" id="phone"><br>
+		
+		<!--fieldset-->
+		<fieldset style="width:200px;margin:5px">
+			<!--legend-->
+			<legend>단체 종류: </legend>
+			<!--radio-->
+			<input type="radio" name="group-type" id="individual" value="1">
+			<label for="individual">개인</label><br>
+			<input type="radio" name="group-type" id="team" value="2">
+			<label for="team">팀</label><br>
+			<input type="radio" name="group-type" id="club" value="3">
+			<label for="club">동아리</label><br>
+			<input type="radio" name="group-type" id="faculty" value="4">
+			<label for="faculty">학부</label><br>
+			<input type="radio" name="group-type" id="etc" value="5">
+			<label for="etc">기타</label><br>
+		</fieldset>
+		
+		<!--datalist-->
+		<label for="purpose">이용 목적: </label><br>
+		<input type="text" name="purpose" id="purpose" list="purpose-list"><br>
+		<datalist id="purpose-list">
+			<option value="훈련">
+			<option value="경기">
+			<option value="대회">
+		</datalist>
+		
+		<!--textarea-->
+		<label for="other-inquiries">기타 문의사항</label><br>
+		<textarea name="other-inquiries" id="other-inquiries" cols="30" rows="5"></textarea><br>
+		
+		<!--checkbox-->
+		<input type="checkbox" name="confirm" id="confirm">
+		<label for="confirm">위 내용을 확인하였습니다.</label><br>
+		
+		<!--submit-->
+		<input type="submit" value="예약하기">
 	</form>
 </body>
 </html>
